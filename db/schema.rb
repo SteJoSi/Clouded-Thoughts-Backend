@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2023_01_05_214131) do
 
+  create_table "posts", force: :cascade do |t|
+    t.integer "date"
+    t.string "title"
+    t.text "body"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
