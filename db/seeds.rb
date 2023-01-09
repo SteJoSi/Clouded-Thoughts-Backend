@@ -2,8 +2,10 @@ puts "🌱 Seeding spices..."
 
 # Make 5 users
 5.times do
-    User.create(name: Faker::Name.name)
-    User.create(password: Faker::Password.password)
+    user = User.create(
+        name: Faker::User.name,
+        password: Faker::User.password
+    )
 end
 
 # Make 10 posts
