@@ -8,7 +8,7 @@ Post.destroy_all
 # Make 5 users
 5.times do
     user = User.create(
-        name: Faker::User.name,
+        username: Faker::User.username,
         password: Faker::User.password
     )
 end
@@ -18,7 +18,7 @@ end
     post = Post.create(
         date: Faker::Post.date,
         title: Faker::Post.title,
-        text: Faker::Post.text
+        body: Faker::Post.body
     )
 end
 
