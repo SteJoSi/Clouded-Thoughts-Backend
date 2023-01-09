@@ -1,4 +1,9 @@
-puts "🌱 Seeding spices..."
+require 'faker'
+
+puts "🌱 Seeding data..."
+
+User.destroy_all
+Post.destroy_all
 
 # Make 5 users
 5.times do
