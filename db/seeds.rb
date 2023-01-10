@@ -18,7 +18,8 @@ end
     post = Post.create(
         date: Faker::Post.date,
         title: Faker::Post.title,
-        body: Faker::Post.body
+        body: Faker::Post.body,
+        user_id: Post.user_id
     )
 end
 

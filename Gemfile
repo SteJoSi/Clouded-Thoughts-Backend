@@ -38,8 +38,9 @@ gem "require_all", "~> 3.0"
 group :development do
   # Used to generate seed data
   # https://github.com/faker-ruby/faker
-  gem "faker", "~> 2.18"
-  
+  # gem "faker", "~> 2.18"
+  gem 'faker'
+
   gem "pry", "~> 0.14.1"
 
   # Automatically reload when there are changes
