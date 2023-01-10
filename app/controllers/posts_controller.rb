@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     # gets all posts and returns it as json
     get '/posts' do
-        posts = Post.allocate
+        posts = Post.all
         posts.to_json
     end
 
