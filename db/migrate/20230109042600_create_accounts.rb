@@ -10,3 +10,5 @@ class CreateAccounts < ActiveRecord::Migration[6.1]
     end
   end
 end
+
+# move this into user
