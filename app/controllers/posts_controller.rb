@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-    # gets all posts and returns it as json
+    
     get '/posts' do
-        posts = Post.all
+        posts = Post.all.order(:date)
         posts.to_json
     end
 
-    # creates a new post with params and returns it as a json
     post '/posts' do
         posts = Post.create(
             date: params[:date],
@@ -16,7 +15,6 @@ class PostsController < ApplicationController
         posts.to_json
     end
     
-    # updates the body of the selected post
     patch'/posts/:id' do
         posts = Post.find(params[:id])
         posts.update(
@@ -25,7 +23,6 @@ class PostsController < ApplicationController
         posts.to_json
     end
 
-    # deletes the post from the database
     delete '/posts/:id' do
         posts = Post.find(params[:id])
         posts.destroy

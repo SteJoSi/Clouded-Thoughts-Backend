@@ -1,4 +1,5 @@
 require 'faker'
+# require 'pry'
 
 puts "🌱 Seeding data..."
 
@@ -26,4 +27,5 @@ end
     )
 end
 
+# binding.pry
 puts "✅ Done seeding!"
