@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
    
     get '/users' do
-        users = User.all.order(:username)
+        users = User.order(:username)
         users.to_json
     end
 
