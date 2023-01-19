@@ -2,7 +2,7 @@ class UsersController < ApplicationController
    
     get '/users' do
         users = User.order(:username)
-        users.to_json
+        users.to_json(include: :posts)
     end
 
     post '/users' do

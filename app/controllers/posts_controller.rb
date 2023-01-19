@@ -1,11 +1,7 @@
 class PostsController < ApplicationController
-
-    get "/posts" do
-        { message: "Good luck with your project!" }.to_json
-      end
     
     get '/posts' do
-        posts = Post.all.order(:date)
+        posts = Post.order(:date)
         posts.to_json
     end
 
