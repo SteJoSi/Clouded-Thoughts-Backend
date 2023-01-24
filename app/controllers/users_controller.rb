@@ -13,7 +13,7 @@ class UsersController < ApplicationController
             username: params[:username],
             password: params[:password]
         )
-        users.to_json
+        users.to_json(include: :posts)
     end
 
     patch '/users/:id' do
@@ -21,12 +21,13 @@ class UsersController < ApplicationController
         users.update(
             password: params[:password]
         )
-        users.to_json
+        users.to_json(include: :posts)
     end
 
     delete '/users/:id' do
-        user = User.find(params[:id])
-        user.destroy
-        user.to_json
+        users = User.find(params[:id])
+        users.destroy
+        users.to_json
     end
+    # return a status code that it has been deleted
 end
