@@ -1,18 +1,21 @@
+require 'pry'
+
 class PostsController < ApplicationController
     
     get '/posts' do
         posts = Post.order(:date)
-        posts.to_json
+        posts.to_json(include: :user)
     end
 
     post '/posts' do
-        posts = Post.create(
+        post = Post.create(
             date: params[:date],
             title: params[:title],
             body: params[:body],
             user_id: params[:user_id]
         )
-        posts.to_json
+        binding.pry
+        post.to_json(include: :user)
     end
     
     patch'/posts/:id' do
@@ -20,7 +23,7 @@ class PostsController < ApplicationController
         posts.update(
             body: params[:body]
         )
-        posts.to_json
+        posts.to_json(include: :user)
     end
 
     delete '/posts/:id' do
