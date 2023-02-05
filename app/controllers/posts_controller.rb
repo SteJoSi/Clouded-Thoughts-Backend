@@ -14,7 +14,7 @@ class PostsController < ApplicationController
             body: params[:body],
             user_id: params[:user_id]
         )
-        binding.pry
+        # binding.pry
         post.to_json(include: :user)
     end
     
@@ -30,5 +30,6 @@ class PostsController < ApplicationController
         posts = Post.find(params[:id])
         posts.destroy
         posts.to_json
+        puts "This post has been deleted"
     end
 end

@@ -4,6 +4,7 @@ require 'faker'
 puts "🌱 Seeding data..."
 
 puts "Deleteing old data"
+
 User.destroy_all
 Post.destroy_all
 
