@@ -28,6 +28,5 @@ class UsersController < ApplicationController
         users = User.find(params[:id])
         users.destroy
         users.to_json
-        puts "This user has been deleted"
     end
 end

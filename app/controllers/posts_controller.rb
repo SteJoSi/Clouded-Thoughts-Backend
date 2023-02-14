@@ -30,6 +30,5 @@ class PostsController < ApplicationController
         posts = Post.find(params[:id])
         posts.destroy
         posts.to_json
-        puts "This post has been deleted"
     end
 end
