@@ -14,7 +14,6 @@ class PostsController < ApplicationController
             body: params[:body],
             user_id: params[:user_id]
         )
-        # binding.pry
         post.to_json(include: :user)
     end
     
